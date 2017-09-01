@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.ggbook.controller.BaseController;
 import com.ggbook.model.book.Book;
 import com.ggbook.service.book.BookService;
+import com.jfinal.kit.JsonKit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,16 @@ public class BookController extends BaseController {
     }
 
     public void getByCodes(){
-        String[] codes = getPara("codes").split(",");
-        renderRb(BookService.me.getByCodes(codes).get(0).get("num"));
+        JSONObject params = super.getBodyParam();
+        String[] codes = params.getString("codes").split(",");
+        List<Book> list = BookService.me.getByCodes(codes);
+        JSONObject json = new JSONObject();
+        List<String> codeArr = new ArrayList();
+        for(Book book : list) {
+            codeArr.add(book.get("code"));
+        }
+        json.put("rCodeArr", JsonKit.toJson(codeArr));
+        json.put("count", list.size());
+        renderRb(json);
     }
 }

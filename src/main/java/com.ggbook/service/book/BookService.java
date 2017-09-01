@@ -26,7 +26,7 @@ public class BookService {
             strArr[i] = "?";
         }
         StringBuffer sqls = new StringBuffer();
-        sqls.append("SELECT count(1) as 'num' ")
+        sqls.append("SELECT * ")
                 .append("FROM t_book ")
                 .append("WHERE code IN (" + StrKit.join(strArr, ",") + ")");
         return Book.me.find(sqls.toString(), codes);
