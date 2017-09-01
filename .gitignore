@@ -20,3 +20,20 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+
+/bin/
+/.settings
+/test
+/.project
+/.idea
+/target
+/.classpath
+/src/main/webapp/WEB-INF/classes/com
+/src/main/webapp/WEB-INF/lib
+/src/main/webapp/admin/.vs
+/.externalToolBuilders
+/src/main/webapp/.vs
+/talos.iml
+/src/main/webapp/xls-tmp/useless
+src/main/webapp/META-INF/
