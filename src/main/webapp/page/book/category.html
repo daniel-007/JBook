@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style id="znBdcsStyle" type="text/css">
+        .bdcs-clearfix:after {
+        content: '';
+        display: block;
+        clear: both;
+        height: 0
+    }
+
+    .bdcs-clearfix {
+        zoom: 1
+    }
+
+    .bdcs-search-custom-sug, .bdcs-search-custom-sug * {
+        box-sizing: content-box;
+        margin: 0;
+        padding: 0;
+        float: none;
+        clear: none;
+        overflow: hidden;
+        white-space: nowrap;
+        word-wrap: normal;
+        border: 0;
+        background: 0 0;
+        width: auto;
+        height: auto;
+        max-width: none;
+        min-width: none;
+        max-height: none;
+        min-height: none;
+        border-radius: 0;
+        box-shadow: none;
+        transition: none;
+        text-align: left
+    }
+
+    .bdcs-search-custom-sug {
+        display: none;
+        position: absolute;
+        z-index: 2147483647
+    }
+
+    .bdcs-search-custom-sug-list {
+        list-style: none;
+        border: 1px solid #DDD;
+        background-color: #FFF
+    }
+
+    .bdcs-search-custom-sug-list {
+    }
+
+    .bdcs-search-custom-sug-list-item {
+        display: block;
+        list-style: none;
+        cursor: pointer;
+        padding: 0 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden
+    }
+
+    .bdcs-search-custom-sug-list-item-current {
+        background-color: #EBEBEB
+    }
+
+    .bdcs-search-custom-sug-list-item-author-novel, .bdcs-search-custom-sug-list-item-author-music, .bdcs-search-custom-sug-list-item-type-movie {
+        color: #BABABA
+    }
+
+    .bdcs-search-custom-sug-list-item-author-novel, .bdcs-search-custom-sug-list-item-author-music {
+        margin-left: 5px
+    }
+
+    .bdcs-search-custom-sug-list-item-music {
+        overflow: hidden;
+        *zoom: 1
+    }
+
+    .bdcs-search-custom-sug-list-item-value-movie {
+        float: left
+    }
+
+    .bdcs-search-custom-sug-list-item-type-movie {
+        float: right
+    }
+
+    .bdcs-search-custom-sug-skin {
+        display: none;
+        width: 85px;
+        height: 85px;
+        position: absolute;
+        right: 1px;
+        bottom: 1px
+    }
+
+    .bdcs-search-custom-sug-skin-img {
+        width: 85px;
+        height: 85px
+    }
+
+    .bdcs-search-custom-sug-i {
+        color: #e64fa3;
+        font-weight: 700;
+        margin-left: 10px;
+        font-family: simsun;
+        font-style: normal
+    }
+
+    .bdcs-search-custom-sug-adv {
+        width: 105px;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        display: none
+    }
+
+    .bdcs-search-custom-sug-adv-img {
+        position: absolute;
+        top: 0;
+        right: 0
+    }
+
+    .bdcs-search-custom-sug-list {
+        width: px;
+    }
+
+    .bdcs-search-custom-sug-list-item {
+        height: 28px;
+        line-height: 28px;
+        font-family: Arial, SimSun, sans-serif;
+        font-size: 14px;
+    }
+
+    .bdcs-search-custom-sug-list-item-value {
+        color: #000000;
+    }
+
+    #bdcs-rec {
+        display: none;
+    }</style>
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>书籍分类</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="./assets/css/wap.css" rel="stylesheet">
+    <style type="text/css">
+        #Cpg80012751mcejx {
+        position: fixed;
+        z-index: 2147483647;
+        width: 375px !important;
+        line-height: 0;
+        left: 0;
+        bottom: 0;
+        max-height: 300px;
+        clear: both;
+    }
+
+    #Cpg80012751mcejx * {
+        width: 100%;
+        border: none;
+    }
+
+    #Xpg80012751mcejx {
+        position: relative;
+        width: 375px;
+        z-index: 2147483644;
+    }
+
+    #Zpg80012751mcejx {
+        display: inline-block;
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        margin: 0px;
+        width: 100%;
+        height: 170%;
+        z-index: 2147483645;
+    }
+
+    #Apg80012751mcejx {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        z-index: 2147483646;
+    }
+
+    #Ipg80012751mcejx {
+        position: absolute;
+        top: -18px;
+        right: 0;
+        z-index: 2147483647;
+        width: 20px;
+        height: 18px;
+        background: rgba(0, 0, 0, 0.1);
+        font-size: 15px;
+        text-align: center;
+        line-height: 19px;
+        color: #fff;
+        font-family: Arial;
+        text-decoration: none;
+    }
+
+    #Tpg80012751mcejx {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2147483647;
+        font-size: 9px;
+        color: #fff;
+        background: rgba(57, 146, 227, 0.4);
+        display: inline-block;
+        width: 26px;
+        height: 12px;
+        line-height: 14px;
+        text-align: center;
+        border-radius: 5px 0;
+    }
+
+    #Spg80012751mcejx {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2147483647;
+        color: #f00;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        max-height: 20%;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    @media all and(orientation: portrait) {
+        #Cpg80012751mcejx {
+            width: 100%;
+        }
+    }
+
+    @media all and(orientation: landscape) {
+        #Cpg80012751mcejx {
+            width: 50%;
+            left: 25%;
+        }
+
+        #Zpg80012751mcejx {
+            width: 200%;
+            left: -50%;
+        }
+    }
+    </style>
+    <style type="text/css">
+        @-webkit-keyframes bd-loadRotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bd-loadRotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body style="display: block;">
+<div class="m_top_boxwrap">
+    <div class="m_top_box">
+        <h2 class="m_top_title">
+            <a href="#" title="玄幻奇幻">玄幻奇幻小说</a>
+        </h2>
+    </div>
+</div>
+<form name="From" method="get" action="#">
+    <div class="m_search_box">
+        <div class="m_search_icon"></div>
+        <div class="m_search_text">
+            <input type="text" value="" name="q" id="bdcsMain" autocomplete="off">
+        </div>
+        <input class="m_search_sub" type="submit" value="">
+    </div>
+    <div><input type="hidden" name="s" value="1439609488155628121"><input type="hidden" name="entry" value="1"></div>
+</form>
+<div class="m_lm1_top">
+    <div class="m_lm1_top2"><a href="http://m.xinshu.in/xuanhuan/">玄幻·奇幻</a><span>|</span><a
+            href="http://m.xinshu.in/xianxia/">仙侠·武侠</a><span>|</span><a href="http://m.xinshu.in/dushi/">都市·言情</a>
+    </div>
+    <div class="m_lm1_top2"><a href="http://m.xinshu.in/chuanyue/">穿越·历史</a><span>|</span><a
+            href="http://m.xinshu.in/kehuan/">科幻·灵异</a><span>|</span><a href="http://m.xinshu.in/tongren/">同人·网游</a>
+    </div>
+</div>
+<div class="m_kc_tit mk_kc04">
+    <div class="m_kc_tit_icon"></div>
+    <h1>最受欢迎的玄幻奇幻小说</h1></div>
+<ul class="m_kc_con" id="type_3">
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/longwangchuanshuo/">龙王传说 [唐家三少]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/xueyinglingzhu/">雪鹰领主 [我吃西红柿]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/xiuluowushen/">修罗武神 [善良的蜜蜂]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/diyushanhe/">帝御山河
+        [皇甫奇]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/douluodaluwaichuanshenjiechuanshuo/">斗罗大陆外传神界传说 [唐家三少]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/hunchunjianshen/">混沌剑神 [心星逍遥]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/daizhounongchanghunyijie/">带着农场混异界 [明宇]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/longfu/">龙符
+        [梦入神机]</a></li>
+    <li class="m_lm_list02_top" style="overflow: hidden; white-space: nowrap;"><a
+            href="http://m.xinshu.in/yongyejunwang/">永夜君王 [烟雨江南]</a></li>
+</ul>
+<div class="m_lm_title">
+    <h2>玄幻奇幻小说更新列表</h2>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/shengqiongjue/" title="圣穹诀">圣穹诀</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/xiaorongqianqian.html" title="笑容浅浅">笑容浅浅</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/shengqiongjue/3213444.html">第七章 屠戮</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/zhandoufeiying/" title="战斗飞鹰">战斗飞鹰</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/qiannianfuchen.html" title="千年拂尘">千年拂尘</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/zhandoufeiying/3207916.html">第三十章 太极之威</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/bingyandizun/" title="冰焰帝尊">冰焰帝尊</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/tupotianji.html" title="突破天际">突破天际</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/bingyandizun/3211799.html">第五章 阶下囚？</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/renjianshenji/" title="人间神迹">人间神迹</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/koushuiyou.html" title="口水油">口水油</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/renjianshenji/3212319.html">第十九章 傻乐要请客</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/jiuripianzhang/" title="旧日篇章">旧日篇章</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/xuming1.html" title="虚鸣">虚鸣</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/jiuripianzhang/3206135.html">第四章 异化之影</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/wo_jishichongqun/" title="我，既是虫群">我，既是虫群</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/zhichangfuming.html" title="知常复命">知常复命</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/wo_jishichongqun/3210449.html">第97章 未雨绸缪</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/changhege/" title="长河歌">长河歌</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/shanwanghe.html" title="山望河">山望河</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/changhege/3213600.html">015 火烧成墙</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/wenmingliezhe/" title="文明猎者">文明猎者</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/zhuangdi.html" title="庄第">庄第</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/wenmingliezhe/3213402.html">第七章 第二次试炼开始</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/dadaoshengmie/" title="大道生灭">大道生灭</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/muzheyifeng.html" title="牧者逸枫">牧者逸枫</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/dadaoshengmie/3212085.html">第0004章 天道缥缈 因果之力</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/woyouyikeshijieshu/" title="我有一棵世界树">我有一棵世界树</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/shinanyan.html" title="世南言">世南言</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/woyouyikeshijieshu/3213741.html">第二百五十章 挂印而去</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/chuangshishengjie/" title="创世圣戒">创世圣戒</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/huaziyu.html" title="花子鱼">花子鱼</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/chuangshishengjie/3209090.html">第一百二十六章 馒头（上）</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/gemingbanvshen/" title="革命吧女神">革命吧女神</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/caoshangfei.html" title="草上匪">草上匪</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/gemingbanvshen/3192580.html">三十五 地下城，不可名状的恐怖</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/shouhengtianxia/" title="兽横天下">兽横天下</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/dabaizeyu.html" title="大白泽雨">大白泽雨</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/shouhengtianxia/3188578.html">第十章 万里外</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/tianniwushen/" title="天逆武神">天逆武神</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/heitianfanghuo.html" title="黑天放火">黑天放火</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/tianniwushen/3188568.html">第十章 自称强者</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/tianzhaochuanshuo/" title="天照传说">天照传说</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/tongpaojiushu.html" title="同袍旧书">同袍旧书</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/tianzhaochuanshuo/3188566.html">第九章 青铜记忆</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/xu_yuguitongzhuderizi/" title="嘘！与鬼同住的日子">嘘！与鬼同住的日子</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/xiaoxiaohui8.html" title="小小灰8">小小灰8</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/xu_yuguitongzhuderizi/3188627.html">第二十章 哪多冒出的三只鬼</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/shenshouhashiqi/" title="神兽哈士奇">神兽哈士奇</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/donghuangming.html" title="东皇铭">东皇铭</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/shenshouhashiqi/3186780.html">第十三章 修行</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/yinyangbinggushi/" title="阴阳冰蛊师">阴阳冰蛊师</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/sanxiaoliuxiang.html" title="三笑留香">三笑留香</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/yinyangbinggushi/3188684.html">第四十五章 美人，给大爷笑一个！</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/wandaozhuzai/" title="万道主宰">万道主宰</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/yeyuzhulin.html" title="夜语竹林">夜语竹林</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/wandaozhuzai/3181578.html">第十七章 三重圆满</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/diqiubushiyuande/" title="地球不是圆的">地球不是圆的</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/youshi.html" title="油士">油士</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/diqiubushiyuande/3213805.html">第三百五十八章 高层接送</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/shendaodipo/" title="神道帝魄">神道帝魄</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/tanyiming.html" title="谭一鸣">谭一鸣</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/shendaodipo/3179467.html">第二十二章——族纹（上）</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/jiguanshenzuo/" title="机关神座">机关神座</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/bizhijiangshan.html" title="笔指江山">笔指江山</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/jiguanshenzuo/3187423.html">第三十七章 老朽无能啊！</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/shishangdiyixiaozhang/" title="史上第一嚣张">史上第一嚣张</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/xushixingzhe.html" title="虚实行者">虚实行者</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/shishangdiyixiaozhang/3188790.html">第八十三章 刘容白的嘴遁尝试</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/wanyuzhandi/" title="万域战帝">万域战帝</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/yunqian.html" title="云潜">云潜</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/wanyuzhandi/3181645.html">第41章 稳固</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_list">
+    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/tianfuwang/" title="天赋王">天赋王</a></h3>
+    <div class="m_lm_list_from"><a href="http://m.xinshu.in/xiangwu.html" title="向武">向武</a></div>
+    <div class="m_lm_list_time"><a href="http://m.xinshu.in/tianfuwang/3192100.html">第三章 从此以后兴风作浪</a></div>
+    <div class="clear"></div>
+</div>
+<div class="pagelistbox">
+    <span class="indexPage">首页
+    </span><strong>1</strong>
+    <a class="nextPage" href="http://m.xinshu.in/xuanhuan/list_2.html">下页</a>
+    <a class="endPage" href="http://m.xinshu.in/xuanhuan/list_73.html">末页</a>
+    <select name="pagelist" onchange="javascript:location.href=this.value;">
+        <option value="#" selected="">1</option>
+        <option value="/xuanhuan/list_2.html">2</option>
+        <option value="/xuanhuan/list_3.html">3</option>
+        <option value="/xuanhuan/list_4.html">4</option>
+        <option value="/xuanhuan/list_5.html">5</option>
+        <option value="/xuanhuan/list_6.html">6</option>
+    </select>
+</div>
+
+
+<div align="center"><!--AD--></div>
+<div class="copy_box">
+    <div>手机看御帝小说就来http://m.xinshu.in/yudi/</div>
+    <div><a href="http://m.xinshu.in/">新书在线移动版</a> <a href="http://m.xinshu.in/">m.xinshu.in</a></div>
+    <!--<div style="display:none">
+        <script type="text/javascript">host = window.location.host;
+        host1 = window.location.host;
+        url = window.location.href;
+        host2 = "www-baidu-com";
+        host1 = host1.replace(/\./g, "-");
+        if (host1 != host2) {
+            host2 = host2.replace(/-/g, ".");
+            url = url.replace(host, host2);
+            window.location.href = url;
+        }</script>
+        <script type="text/javascript">(function () {
+            function async_load() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'http://c.xinshu.in/download/spider.php';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+
+            if (window.attachEvent) window.attachEvent('onload', async_load); else window.addEventListener('load', async_load, false);
+        })(); </script>
+    </div>-->
+</div>
+
+</body>
+</html>

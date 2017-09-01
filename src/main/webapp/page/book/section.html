@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style id="znBdcsStyle" type="text/css">
+
+    .bdcs-search-custom-sug, .bdcs-search-custom-sug * {
+        box-sizing: content-box;
+        margin: 0;
+        padding: 0;
+        float: none;
+        clear: none;
+        overflow: hidden;
+        white-space: nowrap;
+        word-wrap: normal;
+        border: 0;
+        background: 0 0;
+        width: auto;
+        height: auto;
+        max-width: none;
+        min-width: none;
+        max-height: none;
+        min-height: none;
+        border-radius: 0;
+        box-shadow: none;
+        transition: none;
+        text-align: left
+    }
+
+    .bdcs-search-custom-sug {
+        display: none;
+        position: absolute;
+        z-index: 2147483647
+    }
+
+    .bdcs-search-custom-sug-list {
+        list-style: none;
+        border: 1px solid #DDD;
+        background-color: #FFF
+    }
+
+    .bdcs-search-custom-sug-list {
+    }
+
+    .bdcs-search-custom-sug-list-item {
+        display: block;
+        list-style: none;
+        cursor: pointer;
+        padding: 0 5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden
+    }
+
+    .bdcs-search-custom-sug-list-item-current {
+        background-color: #EBEBEB
+    }
+
+    .bdcs-search-custom-sug-list-item-author-novel, .bdcs-search-custom-sug-list-item-author-music, .bdcs-search-custom-sug-list-item-type-movie {
+        color: #BABABA
+    }
+
+    .bdcs-search-custom-sug-list-item-author-novel, .bdcs-search-custom-sug-list-item-author-music {
+        margin-left: 5px
+    }
+
+    .bdcs-search-custom-sug-list-item-music {
+        overflow: hidden;
+        *zoom: 1
+    }
+
+    .bdcs-search-custom-sug-list-item-value-movie {
+        float: left
+    }
+
+    .bdcs-search-custom-sug-list-item-type-movie {
+        float: right
+    }
+
+    .bdcs-search-custom-sug-skin {
+        display: none;
+        width: 85px;
+        height: 85px;
+        position: absolute;
+        right: 1px;
+        bottom: 1px
+    }
+
+    .bdcs-search-custom-sug-skin-img {
+        width: 85px;
+        height: 85px
+    }
+
+    .bdcs-search-custom-sug-i {
+        color: #e64fa3;
+        font-weight: 700;
+        margin-left: 10px;
+        font-family: simsun;
+        font-style: normal
+    }
+
+    .bdcs-search-custom-sug-adv {
+        width: 105px;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        display: none
+    }
+
+    .bdcs-search-custom-sug-adv-img {
+        position: absolute;
+        top: 0;
+        right: 0
+    }
+
+    .bdcs-search-custom-sug-list {
+        width: px;
+    }
+
+    .bdcs-search-custom-sug-list-item {
+        height: 28px;
+        line-height: 28px;
+        font-family: Arial, SimSun, sans-serif;
+        font-size: 14px;
+    }
+
+    .bdcs-search-custom-sug-list-item-value {
+        color: #000000;
+    }
+
+    #bdcs-rec {
+        display: none;
+    }</style>
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>阅读章节列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="./assets/css/wap.css" rel="stylesheet">
+    <style type="text/css">
+        #ZSjQU {
+        position: relative;
+        width: 100%;
+        overflow: visible !important;
+        height: auto;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: #ddd;
+        z-index: 2147483646;
+    }
+
+    #ZSjQU * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        min-width: none;
+        max-width: none;
+    }
+
+    .ZSjQUD0 {
+        width: 100.00%;
+        float: left;
+        text-align: center;
+        position: relative;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0) !important;
+    }
+
+    .ZSjQUD0 img {
+        width: 100%;
+        float: left;
+    }
+
+    .ZSjQUD1 {
+        line-height: normal !important;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .RZQKDS {
+        width: 18px !important;
+        height: 11px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        right: 0 !important;
+        margin: 0 !important;
+        background: rgba(57, 146, 227, 0.6) !important;
+    }
+
+    .RZQKDS a {
+        float: right !important;
+        color: #fff !important;
+        font-size: 8px !important;
+        width: 18px !important;
+        height: 11px !important;
+        line-height: 11px !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-family: Arial !important;
+    }
+
+    .RZQKDS img {
+        float: right;
+        width: auto !important;
+    }
+
+    .RUz182 {
+        top: 3px;
+        position: absolute;
+        right: 3px;
+        margin: 0;
+        background: rgba(255, 255, 255, 0);
+    }
+
+    .RUz182 a {
+        float: right;
+        color: #fff;
+        font-size: 8px;
+        width: 18px;
+        height: 9px;
+        line-height: 9px;
+        text-decoration: none;
+        text-align: center;
+        font-family: Arial;
+    }</style>
+    <style type="text/css">
+        #Z8R4K {
+        position: relative;
+        width: 100%;
+        overflow: visible !important;
+        height: auto;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: #ddd;
+        z-index: 2147483646;
+    }
+
+    #Z8R4K * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        min-width: none;
+        max-width: none;
+    }
+
+    .Z8R4KD0 {
+        width: 100.00%;
+        float: left;
+        text-align: center;
+        position: relative;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0) !important;
+    }
+
+    .Z8R4KD0 img {
+        width: 100%;
+        float: left;
+    }
+
+    .Z8R4KD1 {
+        line-height: normal !important;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .RFRhzi {
+        width: 18px !important;
+        height: 11px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        right: 0 !important;
+        margin: 0 !important;
+        background: rgba(57, 146, 227, 0.6) !important;
+    }
+
+    .RFRhzi a {
+        float: right !important;
+        color: #fff !important;
+        font-size: 8px !important;
+        width: 18px !important;
+        height: 11px !important;
+        line-height: 11px !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-family: Arial !important;
+    }
+
+    .RFRhzi img {
+        float: right;
+        width: auto !important;
+    }
+
+    .RUz182 {
+        top: 3px;
+        position: absolute;
+        right: 3px;
+        margin: 0;
+        background: rgba(255, 255, 255, 0);
+    }
+
+    .RUz182 a {
+        float: right;
+        color: #fff;
+        font-size: 8px;
+        width: 18px;
+        height: 9px;
+        line-height: 9px;
+        text-decoration: none;
+        text-align: center;
+        font-family: Arial;
+    }</style>
+    <style type="text/css">
+        #Cpg80012751gydsv {
+        position: fixed;
+        z-index: 2147483647;
+        width: 375px !important;
+        line-height: 0;
+        left: 0;
+        bottom: 0;
+        max-height: 300px;
+        clear: both;
+    }
+
+    #Cpg80012751gydsv * {
+        width: 100%;
+        border: none;
+    }
+
+    #Xpg80012751gydsv {
+        position: relative;
+        width: 375px;
+        z-index: 2147483644;
+    }
+
+    #Zpg80012751gydsv {
+        display: inline-block;
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 2147483645;
+    }
+
+    #Apg80012751gydsv {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        z-index: 2147483646;
+    }
+
+    #Ipg80012751gydsv {
+        position: absolute;
+        top: -18px;
+        right: 0;
+        z-index: 2147483647;
+        width: 20px;
+        height: 18px;
+        background: rgba(0, 0, 0, 0.1);
+        font-size: 15px;
+        text-align: center;
+        line-height: 19px;
+        color: #fff;
+        font-family: Arial;
+        text-decoration: none;
+    }
+
+    #Tpg80012751gydsv {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2147483647;
+        font-size: 9px;
+        color: #fff;
+        background: rgba(57, 146, 227, 0.4);
+        display: inline-block;
+        width: 26px;
+        height: 12px;
+        line-height: 14px;
+        text-align: center;
+        border-radius: 5px 0;
+    }
+
+    #Spg80012751gydsv {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2147483647;
+        color: #f00;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        max-height: 20%;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    @media all and(orientation: portrait) {
+        #Cpg80012751gydsv {
+            width: 100%;
+        }
+    }
+
+    @media all and(orientation: landscape) {
+        #Cpg80012751gydsv {
+            width: 50%;
+            left: 25%;
+        }
+
+        #Zpg80012751gydsv {
+            width: 200%;
+            left: -50%;
+        }
+    }</style>
+    <style type="text/css">
+        @-webkit-keyframes bd-loadRotate {
+                                from {
+                                    -webkit-transform: rotate(0deg);
+                                }
+                                to {
+                                    -webkit-transform: rotate(360deg);
+                                }
+                            }
+
+    @keyframes bd-loadRotate {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    .bd-load-effect {
+        display: inline-block;
+        vertical-align: middle;
+        background: url(//t12.baidu.com/it/u=3593248742,1654771676&fm=76) no-repeat 0 0;
+        background-size: 100%;
+        -webkit-animation-name: bd-loadRotate;
+        -webkit-animation-duration: 1.3s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        animation-name: bd-loadRotate;
+        animation-duration: 1.3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }</style>
+</head>
+<body style="display: block;">
+<div class="m_top_boxwrap">
+    <div class="m_top_box">
+        <h2 class="m_top_title">
+            <a href="#" title="最新章节">最新章节</a>
+        </h2>
+    </div>
+</div>
+<form name="From" method="get" action="">
+    <div class="m_search_box">
+        <div class="m_search_icon"></div>
+        <div class="m_search_text">
+            <input type="text" value="" name="q" id="bdcsMain" autocomplete="off">
+        </div>
+        <input class="m_search_sub" type="submit" value="">
+    </div>
+    <div><input type="hidden" name="s" value="1439609488155628121"><input type="hidden" name="entry" value="1"></div>
+</form>
+<div class="m_lm1_top">
+    <div class="m_lm1_top2"><a href="http://m.xinshu.in/xuanhuan/">玄幻·奇幻</a><span>|</span><a
+            href="http://m.xinshu.in/xianxia/">仙侠·武侠</a><span>|</span><a href="http://m.xinshu.in/dushi/">都市·言情</a>
+    </div>
+    <div class="m_lm1_top2"><a href="http://m.xinshu.in/chuanyue/">穿越·历史</a><span>|</span><a
+            href="http://m.xinshu.in/kehuan/">科幻·灵异</a><span>|</span><a href="http://m.xinshu.in/tongren/">同人·网游</a>
+    </div>
+</div>
+<div class="m_lmh1">
+    <h1 class="cc00"><a href="http://m.xinshu.in/yudi/" title="御帝">御帝</a></h1>
+</div>
+<div class="m_lm_list" elite="0" isnew="2014-01-14">
+    <div class="m_list_from">作者：<a href="http://m.xinshu.in/yangtaishangdenangong.html">阳台上的南宫</a>【<a
+            href="http://m.xinshu.in/yangtaishangdenangong.html" style="color:#c50">阳台上的南宫全部小说</a>】
+    </div>
+    <div class="m_list_time">人气：540</div>
+    <div class="m_list_from">类型：玄幻奇幻</div>
+    <div class="m_list_time">字数：153673</div>
+    <div class="m_list_from">
+        <a href="">御帝txt下载</a></div>
+    <div class="clear"></div>
+</div>
+<div class="m_lm_title">
+    <h2>御帝最新章节</h2>
+</div>
+<ul class="m_lm_list03">
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/1703604.html">第五十二章 魔法师</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/1703603.html">第五十一章 武魂</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/1703602.html">第五十章 杀手罂粟</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/1703601.html">第四十九章 邀请</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/1703600.html">第四十八章 传说中的无名野兽</a>
+    </li>
+</ul>
+<div class="m_lm_title">
+    <h2>御帝全文阅读章节列表</h2>
+</div>
+<ul class="m_lm_list03">
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243131.html">相关设定与背景说明</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243132.html">第一章 水晶冥想法</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243133.html">第二章 扛不住，也要扛！</a>
+    </li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243333.html">第三章 体术终极模拟大考</a>
+    </li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243334.html">第四章 灵魂晶石，武魂赵云</a>
+    </li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243335.html">第五章 纠缠</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243336.html">第六章 威胁</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243538.html">第七章 你父亲出事了</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243539.html">第八章 把我父亲交出来</a>
+    </li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243543.html">第九章 杀伐果断</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243545.html">第十章 政府公告</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243748.html">第十一章 何为痛苦？</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243749.html">第十二章 安娜</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243750.html">第十三章 收徒</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243751.html">第十四章 算账</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243954.html">第十五章 挨揍</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243955.html">第十六章 飞快地突破</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243956.html">第十七章 兽神洗礼，开始</a>
+    </li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/243957.html">第十八章 S级天赋</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/244153.html">第十九章 苏紫衣</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/244154.html">第二十章 相救</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/244155.html">第二十一章 同行</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/244156.html">第二十二章 进阶</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/244354.html">第二十三章 扶持</a></li>
+    <li style="overflow: hidden; white-space: nowrap;"><a href="http://m.xinshu.in/yudi/244355.html">第二十四章 死讯</a></li>
+</ul>
+<div class="pagelistbox">
+<span class="indexPage">首页
+</span><strong>1</strong>
+    <a class="nextPage" href="http://m.xinshu.in/yudi/list_2.html">下页</a>
+    <a class="endPage" href="http://m.xinshu.in/yudi/list_3.html">末页</a>
+    <select name="pagelist" onchange="javascript:location.href=this.value;">
+        <option value="#" selected="">1</option>
+        <option value="/yudi/list_2.html">2</option>
+        <option value="/yudi/list_3.html">3</option>
+    </select>
+</div>
+
+<div class="copy_box">
+    <div>手机看御帝小说就来http://m.xinshu.in/yudi/</div>
+    <div><a href="http://m.xinshu.in/">新书在线移动版</a> <a href="http://m.xinshu.in/">m.xinshu.in</a></div>
+    <!--<div style="display:none">
+        <script type="text/javascript">host = window.location.host;
+        host1 = window.location.host;
+        url = window.location.href;
+        host2 = "www-baidu-com";
+        host1 = host1.replace(/\./g, "-");
+        if (host1 != host2) {
+            host2 = host2.replace(/-/g, ".");
+            url = url.replace(host, host2);
+            window.location.href = url;
+        }</script>
+        <script type="text/javascript">(function () {
+            function async_load() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'http://c.xinshu.in/download/spider.php';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+
+            if (window.attachEvent) window.attachEvent('onload', async_load); else window.addEventListener('load', async_load, false);
+        })(); </script>
+    </div>-->
+</div>
+</body>
+</html>

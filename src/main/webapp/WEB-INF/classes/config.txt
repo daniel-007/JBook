@@ -1,0 +1,59 @@
+#talos数据源
+jdbcUrl = jdbc:mysql://127.0.0.1:3306/ggbook?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password = root
+#devMode = true
+
+#全局线程池最大线程执行数
+threadMaxSize = 5
+
+#Redis服务地址
+#redis.uri = 112.74.210.94
+#redis.port = 5503
+
+#可调用接口的域名
+remote.origin=http://127.0.0.1
+
+#上传路径
+upload.window.path=D:/talos/upload
+upload.linux.path=/data/wwwroot/talos/upload
+upload.uri=/upload
+
+#excel导出临时文件路径
+excel.window.path=D:/talos/excel
+excel.linux.path=/data/wwwroot/talos/excel
+
+#报文系统根路径
+wsdlfile.window.path=D:/talos/wsdlfile
+wsdlfile.linux.path=/data/wwwroot/talos/wsdlfile
+
+#xls文件模板路径
+xls.path=xls-tmp
+
+#组播相关
+#multicast.ip = 224.0.0.163
+#multicast.port = 4163
+
+#密码狗
+#vendorid=5EFFDF90
+
+#数据导出目录
+export.data.window.path=D:/talos/sql
+export.data.linux.path=/data/wwwroot/talos/sql
+export.data.secret=123456
+export.mysql.ip=192.168.0.144
+
+
+#zip文件压缩加密秘钥
+zip.encryption.secret=123456
+zip.window.path=D:/talos/upload/zip
+zip.linux.path=/data/wwwroot/talos/upload/zip
+
+#客户端软件产品路径
+software.window.path=D:/talos/exe
+software.linux.path=:/data/wwwroot/talos/exe
+
+#本地安装目录
+install.window.path=D:/Program Files/talos/apache-tomcat/webapps/ROOT
+install.linux.path=/data/wwwroot/talos
+
