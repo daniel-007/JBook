@@ -38,6 +38,10 @@ public class BookService {
     }
 
     public List<Book> list() {
-        return Book.me.find("SELECT * FROM t_book ");
+        return Book.me.find("SELECT * FROM t_book order by id asc ");
+    }
+
+    public List<Book> listDesc() {
+        return Book.me.find("SELECT * FROM t_book order by id desc ");
     }
 }

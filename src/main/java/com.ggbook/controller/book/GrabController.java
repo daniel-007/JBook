@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.ggbook.controller.BaseController;
 import com.ggbook.model.book.Book;
+import com.ggbook.model.book.ErrBookLog;
+import com.ggbook.model.book.ErrPagesLog;
 import com.ggbook.model.book.Pages;
 import com.ggbook.service.book.BookService;
 import com.ggbook.service.book.PagesService;
@@ -62,10 +64,17 @@ public class GrabController extends BaseController {
     }
 
     /**
-     * 查询所有书籍
+     * 查询所有书籍 asc
      */
     public void list() {
         renderRb(BookService.me.list());
+    }
+
+    /**
+     * 查询所有书籍 desc
+     */
+    public void listDesc() {
+        renderRb(BookService.me.listDesc());
     }
 
     /**
@@ -108,5 +117,39 @@ public class GrabController extends BaseController {
         json.put("rCodeArr", JsonKit.toJson(codeArr));
         json.put("count", list.size());
         renderRb(json);
+    }
+
+    /**
+     * 保存错误book日志
+     */
+    public void saveBookErrLog() {
+        JSONObject params = super.getBodyParam();
+        String code = params.getString("code");
+        int type = params.getIntValue("type");
+
+        ErrBookLog log = new ErrBookLog();
+        log.set("type", type);
+        log.set("code", code);
+        if(log.save()) {
+            renderSucc();
+        }
+        renderErr("保存失败");
+    }
+
+    /**
+     * 保存错误pages日志
+     */
+    public void savePagesErrLog() {
+        JSONObject params = super.getBodyParam();
+        String code = params.getString("code");
+        int type = params.getIntValue("type");
+
+        ErrPagesLog log = new ErrPagesLog();
+        log.set("type", type);
+        log.set("code", code);
+        if(log.save()) {
+            renderSucc();
+        }
+        renderErr("保存失败");
     }
 }
