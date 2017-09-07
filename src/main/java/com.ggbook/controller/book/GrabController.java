@@ -125,11 +125,13 @@ public class GrabController extends BaseController {
     public void saveBookErrLog() {
         JSONObject params = super.getBodyParam();
         String code = params.getString("code");
+        String msg = params.getString("msg");
         int type = params.getIntValue("type");
 
         ErrBookLog log = new ErrBookLog();
         log.set("type", type);
         log.set("code", code);
+        log.set("msg", msg);
         if(log.save()) {
             renderSucc();
             return ;
@@ -144,12 +146,14 @@ public class GrabController extends BaseController {
         JSONObject params = super.getBodyParam();
         String code = params.getString("code");
         String bookCode = params.getString("bookCode");
+        String msg = params.getString("msg");
         int type = params.getIntValue("type");
 
         ErrPagesLog log = new ErrPagesLog();
         log.set("type", type);
         log.set("code", code);
         log.set("bookCode", bookCode);
+        log.set("msg", msg);
         if(log.save()) {
             renderSucc();
             return ;
