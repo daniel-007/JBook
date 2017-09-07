@@ -102,7 +102,7 @@ public class GrabController extends BaseController {
     }
 
     /**
-     * 根据code查询Page表
+     * 根据code查询Page表 判断重复
      */
     public void getPageByCodes(){
         JSONObject params = super.getBodyParam();
@@ -132,6 +132,7 @@ public class GrabController extends BaseController {
         log.set("code", code);
         if(log.save()) {
             renderSucc();
+            return ;
         }
         renderErr("保存失败");
     }
@@ -142,14 +143,39 @@ public class GrabController extends BaseController {
     public void savePagesErrLog() {
         JSONObject params = super.getBodyParam();
         String code = params.getString("code");
+        String bookCode = params.getString("bookCode");
         int type = params.getIntValue("type");
 
         ErrPagesLog log = new ErrPagesLog();
         log.set("type", type);
         log.set("code", code);
+        log.set("bookCode", bookCode);
         if(log.save()) {
             renderSucc();
+            return ;
         }
         renderErr("保存失败");
+    }
+
+    public void updatePagesContent() {
+        JSONObject params = super.getBodyParam();
+        String code = params.getString("code");
+        String bookCode = params.getString("bookCode");
+        String content = params.getString("content");
+
+        if(PagesService.me.update(code, bookCode, content) > 0) {
+            renderSucc();
+            return ;
+        }
+        renderErr("更新失败");
+    }
+
+    /**
+     * 根据书籍code查询 内容为空的章节
+     */
+    public void getNullPagesByCode() {
+        JSONObject params = super.getBodyParam();
+        String bookCode = params.getString("bookCode");
+        renderRb(PagesService.me.getNullPagesByCode(bookCode));
     }
 }

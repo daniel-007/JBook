@@ -8,8 +8,8 @@ password = root
 threadMaxSize = 5
 
 #Redis服务地址
-#redis.uri = 112.74.210.94
-#redis.port = 5503
+redis.uri = 127.0.0.1
+redis.port = 5508
 
 #可调用接口的域名
 remote.origin=http://127.0.0.1

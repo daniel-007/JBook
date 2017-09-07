@@ -10,6 +10,7 @@ import com.jfinal.ext.route.AutoBindRoutes;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.ggbook.model.BaseModel;
+import com.jfinal.plugin.redis.RedisPlugin;
 import net.dreamlu.event.EventPlugin;
 
 /**
@@ -65,7 +66,7 @@ public class Config extends JFinalConfig {
 
 			/*me.add(new EhCachePlugin());//缓存插件
 			me.add(new QuartzPlugin("job.properties"));//任务调度插件
-
+			*/
 
 			try {
 				//redis插件
@@ -74,6 +75,7 @@ public class Config extends JFinalConfig {
 			} catch (Exception e) {
 			}
 
+			/*
 			try {
 				//mongodb插件
 				MongodbPlugin mongodbPlugin = new MongodbPlugin(PropKit.get("mongodbUrl"), PropKit.getInt("mongodbPort"), PropKit.get("mongodb"));
