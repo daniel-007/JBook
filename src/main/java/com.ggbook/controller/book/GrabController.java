@@ -167,7 +167,7 @@ public class GrabController extends BaseController {
         String bookCode = params.getString("bookCode");
         String content = params.getString("content");
 
-        if(PagesService.me.update(code, bookCode, content) > 0) {
+        if(PagesService.me.update(bookCode, code, content) > 0) {
             renderSucc();
             return ;
         }
