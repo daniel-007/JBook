@@ -13,4 +13,10 @@ public class UserController extends BaseController {
         JSONObject params = super.getPageParams();
         renderRb(User.me.list(params));
     }
+
+    /**
+     * 测试 返回页面
+     */
+    public void index() {
+    }
 }

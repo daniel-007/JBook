@@ -2,7 +2,7 @@
 jdbcUrl = jdbc:mysql://127.0.0.1:6868/ggbook?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
 user = root
 password = root
-#devMode = true
+devMode = true
 
 #全局线程池最大线程执行数
 threadMaxSize = 5
