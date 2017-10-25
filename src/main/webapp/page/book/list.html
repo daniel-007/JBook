@@ -21,7 +21,8 @@
         <div id="head_d">
                         <span class="s_back_wr">
                 <div onclick="backRefer();" class="head-a">
-                    <img src="/page/book/assets/images/back.png" width="12px" height="20px" border="0" class="s_back" id="s_back_i">
+                    <img src="/page/book/assets/images/back.png" width="12px" height="20px" border="0" class="s_back"
+                         id="s_back_i">
                 </div>
             </span>
             <span class="s_ipt_wr" id="search_input_container" style="background-color:#f8f8f8;">
@@ -31,13 +32,14 @@
                 <input name="click" value="1" type="hidden">
                 <input name="entry" value="1" type="hidden">
             </span>
-                <div onclick="submitMobile();" class="head-a">
+            <div onclick="submitMobile();" class="head-a">
                 <span class="s_btn_wr">
                     <input name="s" value="1439609488155628121" type="hidden">
                     <input name="nsid" value="" type="hidden">
-                    <img src="/page/book/assets/images/fdj2.png" width="20px" height="20px" border="0" id="su" class="s_btn">
+                    <img src="/page/book/assets/images/fdj2.png" width="20px" height="20px" border="0" id="su"
+                         class="s_btn">
                 </span>
-                </div>
+            </div>
             </form>
             <ul id="bdcs-search-sug-list" class="bdcs-search-sug-list" style="top: 48px; left: 0px; width: 373px;"></ul>
         </div>
@@ -47,10 +49,12 @@
         if ($("#kw").attr("value") == "") {
             $("#icon_remove").hide();
         }
+
         function removeText() {
             $("#kw").attr("value", "");
             $("#icon_remove").hide();
         }
+
         function submitMobile() {
             var frm = document.getElementById('bdcs-search-form');
             frm.submit();
@@ -71,7 +75,8 @@
         <li style="border-bottom:1px solid #F0F0F0;" data-index="<%=i%>"
             class="bdcs-search-sug-list-item <%= (i == selectedIndex) ? " bdcs-search-sug-list-item-current" : "" %>">
         <span class="fdj" style="display:block;vertical-align:middle;float:left;margin-top:3px;margin-right:8px;"> <img
-                src="/page/book/assets/images/fdj.gif" width="18px" height="18px" style="opacity:0.5;" border="0"></span> <span
+                src="/page/book/assets/images/fdj.gif" width="18px" height="18px" style="opacity:0.5;"
+                border="0"></span> <span
                 class="bdcs-search-sug-list-item-value" style="display:block;float:left;"><%=data[i].title%></span>
         </li>
 
@@ -92,6 +97,7 @@
                 return null;
             }
         }
+
         new Sug({
             formElem: document.getElementById('bdcs-search-form'),
             inputElem: document.getElementById('kw'),
@@ -197,6 +203,7 @@
                 if ($("#kw").attr("value") == "") {
                     $("#icon_remove").hide();
                 }
+
                 function removeText() {
                     $("#kw").attr("value", "");
                     $("#icon_remove").hide();
@@ -233,6 +240,7 @@
                 hasHorizontalStructure = true;
                 hasHorizontalStructureForum = true;
                 var curPage = 0;
+
                 function nextPage() {
                     if (pageNo < totalPage && curPage !== pageNo) {
                         curPage = pageNo;
@@ -270,6 +278,7 @@
                         });
                     }
                 }
+
                 function getResultNormal(dataJson, tplId) {
                     var addStr = "";
                     var resultLength = 0;
@@ -385,6 +394,7 @@
                     }
                     return addStr;
                 }
+
                 function getResultNormalSc(dataJson, tplId) {
                     var addStr = "";
                     var resultLength = 0;
@@ -545,6 +555,7 @@
                     }
                     return addStr;
                 }
+
                 function getResultForum(dataJson, tplId) {
                     var addStr = "";
                     var resultLength = 0;
@@ -1646,7 +1657,7 @@
                                 }
                             } else if (word['field'] === 'author'
                                 && (fresult['cse_author']
-                                && fresult['cse_author'].length > 0)
+                                    && fresult['cse_author'].length > 0)
                             ) {
                                 addStr += '<span>' + word['pre'] + ': ' + fresult['cse_author'][0] + word['post'] + '</span>';
                             } else if (word['field'] === 'dataPublished') {
@@ -1664,7 +1675,7 @@
                                 }
                             } else if (word['field'] === 'dataLastReplied'
                                 && (fresult['cse_lastReplyTime']
-                                && fresult['cse_lastReplyTime'].length > 0)
+                                    && fresult['cse_lastReplyTime'].length > 0)
                             ) {
                                 var recentReply = fresult['cse_lastReplyTime'][0];
                                 if (recentReply.length > 10) {
@@ -1673,19 +1684,19 @@
                                 addStr += '<span>最新回复： ' + recentReply + word['post'] + '</span>';
                             } else if (word['field'] === 'replyCount'
                                 && (fresult['cse_replyCount']
-                                && fresult['cse_replyCount'].length > 0
-                                && fresult['cse_replyCount'][0] != 0)
+                                    && fresult['cse_replyCount'].length > 0
+                                    && fresult['cse_replyCount'][0] != 0)
                             ) {
                                 addStr += '<span>回复： ' + fresult['cse_replyCount'][0] + word['post'] + '</span>';
                             } else if (word['field'] === 'browseCount'
                                 && (fresult['cse_viewCount']
-                                && fresult['cse_viewCount'].length > 0
-                                && fresult['cse_viewCount'][0] != 0)
+                                    && fresult['cse_viewCount'].length > 0
+                                    && fresult['cse_viewCount'][0] != 0)
                             ) {
                                 addStr += '<span>浏览： ' + fresult['cse_viewCount'][0] + word['post'] + '</span>';
                             } else if (word['field'] === 'postType'
                                 && (fresult['cse_threadClassify']
-                                && fresult['cse_threadClassify'].length > 0)
+                                    && fresult['cse_threadClassify'].length > 0)
                             ) {
                                 addStr += '<span>状态： ' + fresult['cse_threadClassify'][0] + word['post'] + '</span>';
                             }
@@ -1694,6 +1705,7 @@
                     addStr += '</div>';
                     return addStr;
                 }
+
                 function getStructureWordsForumSc(summaryWords, fresult) {
                     var addStr = '<div class="c-summary-1 nextPage' + pageNo + '">';
                     var summaryLength = 0;
@@ -1754,6 +1766,7 @@
                     addStr += '</div>';
                     return addStr;
                 }
+
                 function subSpanFooter() {
                     var forumWidth = $(".c-summary-1").width() - 20;
                     var str = ".nextPage" + pageNo;
@@ -1776,6 +1789,7 @@
                         }
                     });
                 }
+
                 function subSpanMovieFooter() {
                     $("#results").find(".structure-words-vertical").each(function (k, itemOut) {
                         var str = ".c-image-span-nextPage" + pageNo;
@@ -1786,6 +1800,7 @@
                         });
                     });
                 }
+
                 function urlFormat(url) {
                     if (url.substr(0, 7) === 'http://') {
                         return url;
@@ -1793,6 +1808,7 @@
                         return 'http://' + url;
                     }
                 }
+
                 function nextPageLog() {
                     var params = {};
                     var strUrl = decodeURIComponent(window.location.href);
@@ -1842,6 +1858,7 @@
         window.addEventListener('orientationchange', transelate, false);
     }
     var marginLeftNormal = "";
+
     function transelate() {
         var headWidth;
         var channelWidth;
@@ -1980,14 +1997,17 @@
         //window.open(innerUrl);
         window.location.href = innerUrl;
     }
+
     function clickInnerSpe(innerUrl) {
         cse.util.select('tag', innerUrl, 'filter');
     }
+
     function clickOut(outUrl, index) {
         var iden = "game-legend-" + index;
         document.getElementById(iden).style.background = "#D0D0D0";
         setTimeout("clickOutRe('" + outUrl + "','" + iden + "')", 100);
     }
+
     function clickOutRe(outUrl, iden) {
         window.open(outUrl);
         document.getElementById(iden).style.background = "#FFFFFF";
