@@ -46,7 +46,6 @@
             width: px;
         }
     </style>
-
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>藏书阁</title>
@@ -54,28 +53,31 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="/page/book/assets/css/wap.css" rel="stylesheet">
-    <script charset="utf-8" async="" src="/page/book/assets/js/fingerprint2.min.js"></script>
-    <style type="text/css"> @-webkit-keyframes bd-loadRotate {
-                                from {
-                                    -webkit-transform: rotate(0deg);
-                                }
-                                to {
-                                    -webkit-transform: rotate(360deg);
-                                }
-                            }
+    <script charset="utf-8" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script charset="utf-8" src="/page/book/assets/js/core.js"></script>
+    <!--<script charset="utf-8" async="" src="/page/book/assets/js/fingerprint2.min.js"></script>-->
+    <style type="text/css">
+        @-webkit-keyframes bd-loadRotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
 
-    @keyframes bd-loadRotate {
-        from {
-            -webkit-transform: rotate(0deg);
+        @keyframes bd-loadRotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
         }
-        to {
-            -webkit-transform: rotate(360deg);
-        }
-    }
     </style>
     <script src="/page/book/assets/js/wgxpath.install.js" charset="utf-8" async=""></script>
 </head>
-<body>
+<body onload="index()">
 <div class="m_top_boxwrap">
     <div class="m_top_box"><h2 class="m_top_title">藏书阁</h2></div>
 </div>
@@ -94,73 +96,45 @@
 <div class="m_kc_tit mk_kc04">
     <div class="m_kc_tit_icon"></div>
     <h1>强烈推荐</h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/diyushanhe/">帝御山河[皇甫奇]</a></li>
+<ul class="m_kc_con" id="qltj">
 </ul>
 
 <!-- 玄幻·奇幻 -->
 <div class="m_kc_tit mk_kc04">
     <div class="m_kc_tit_icon"></div>
     <h1><a href="http://m.xinshu.in/xuanhuan/">玄幻·奇幻</a></h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/longwangchuanshuo/">龙王传说[唐家三少]</a></li>
+<ul class="m_kc_con" id="xhqh">
+    <!--<li><a href="">龙王传说[唐家三少]</a></li>-->
 </ul>
 <div class="m_list_goall"><a href="http://m.xinshu.in/xuanhuan/">更多玄幻·奇幻 &gt;&gt;</a></div>
 
-<!-- 仙侠·武侠 -->
+<!-- 武侠·仙侠 -->
 <div class="m_kc_tit mk_kc04">
     <div class="m_kc_tit_icon"></div>
-    <h1><a href="http://m.xinshu.in/xianxia/">仙侠·武侠</a></h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/laizixiuzhenjiedeni/">来自修真界的你[一言生死与卿同]</a></li>
+    <h1><a href="http://m.xinshu.in/xianxia/">武侠·仙侠</a></h1></div>
+<ul class="m_kc_con" id="wxxx">
 </ul>
-<div class="m_list_goall"><a href="http://m.xinshu.in/xianxia/">更多仙侠·武侠 &gt;&gt;</a></div>
+<div class="m_list_goall"><a href="http://m.xinshu.in/xianxia/">更多武侠·仙侠 &gt;&gt;</a></div>
 
 <!-- 都市·言情 -->
 <div class="m_kc_tit mk_kc04">
     <div class="m_kc_tit_icon"></div>
     <h1><a href="http://m.xinshu.in/dushi/">都市·言情</a></h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/xiaoyideyouhuo/">小姨的诱惑[吴良]</a></li>
+<ul class="m_kc_con" id="dsyq">
 </ul>
 <div class="m_list_goall"><a href="http://m.xinshu.in/dushi/">更多都市·言情 &gt;&gt;</a></div>
 
-<!-- 穿越·历史 -->
+<!-- 历史·军事 -->
 <div class="m_kc_tit mk_kc04">
     <div class="m_kc_tit_icon"></div>
-    <h1><a href="http://m.xinshu.in/chuanyue/">穿越·历史</a></h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/jipinxiaoyaoxing/">极品逍遥行[途白]</a></li>
+    <h1><a href="http://m.xinshu.in/chuanyue/">历史·军事</a></h1></div>
+<ul class="m_kc_con" id="lsjs">
 </ul>
-<div class="m_list_goall"><a href="http://m.xinshu.in/chuanyue/">更多穿越·历史 &gt;&gt;</a></div>
+<div class="m_list_goall"><a href="http://m.xinshu.in/chuanyue/">更多历史·军事 &gt;&gt;</a></div>
 
-<!-- 科幻·灵异 -->
-<div class="m_kc_tit mk_kc04">
-    <div class="m_kc_tit_icon"></div>
-    <h1><a href="http://m.xinshu.in/kehuan/">科幻·灵异</a></h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/ouhuang/">欧皇[苍知]</a></li>
-</ul>
-<div class="m_list_goall"><a href="http://m.xinshu.in/kehuan/">更多科幻·灵异 &gt;&gt;</a></div>
-
-<!-- 同人·网游 -->
-<div class="m_kc_tit mk_kc04">
-    <div class="m_kc_tit_icon"></div>
-    <h1><a href="http://m.xinshu.in/tongren/">同人·网游</a></h1></div>
-<ul class="m_kc_con" id="type_3">
-    <li><a href="http://m.xinshu.in/zhenchao/">鸩巢[油灯]</a></li>
-</ul>
-<div class="m_list_goall"><a href="http://m.xinshu.in/tongren/">更多同人·网游 &gt;&gt;</a></div>
 
 <!-- 最近更新小说列表 -->
 <div class="m_lm_title">
-    <h2>最近更新小说列表</h2>
-</div>
-<div class="m_lm_list">
-    <h3 class="m_lm_list_title"><a href="http://m.xinshu.in/fuzhinongjia/" title="福至农家">福至农家</a></h3>
-    <div class="m_lm_list_from"><a href="http://m.xinshu.in/jueseqingzhou.html" title="绝色清粥">绝色清粥</a></div>
-    <div class="m_lm_list_time"><a href="http://m.xinshu.in/fuzhinongjia/3211590.html">第两千一百四十五章 好吃的东西</a></div>
-    <div class="clear"></div>
 </div>
 <div class="copy_box">
     <div>手机看小说就来http://m.xinshu.in/</div>
@@ -171,3 +145,42 @@
 </div>
 </body>
 </html>
+
+<script type="text/javascript">
+    function index() {
+        var params={};
+        App.ajax({
+            data: params,
+            resUrl: "/book/index",
+            callback: function (rb) {
+                if(!rb.status) return;
+                var data = rb.data;
+                $.each(data.qt || [], function (i, v) { // 强推
+                    var title_author = v.title+' ['+v.author.replace('作者：','')+']';
+                    var url = (App.getHost() + v.bCode);
+                    $('#qltj').append('<li><a href="'+url+'">'+title_author+'</a></li>');
+                });
+                $.each(data.xhqh || [], function (i, v) { // 玄幻奇幻
+                    var title_author = v.title;
+                    var url = (App.getHost() + v.bCode);
+                    $('#xhqh').append('<li><a href="'+url+'">'+title_author+'</a></li>');
+                });
+                $.each(data.wxxx || [], function (i, v) { // 武侠仙侠
+                    var title_author = v.title;
+                    var url = (App.getHost() + v.bCode);
+                    $('#wxxx').append('<li><a href="'+url+'">'+title_author+'</a></li>');
+                });
+                $.each(data.dsyq || [], function (i, v) { // 都市言情
+                    var title_author = v.title;
+                    var url = (App.getHost() + v.bCode);
+                    $('#dsyq').append('<li><a href="'+url+'">'+title_author+'</a></li>');
+                });
+                $.each(data.lsjs || [], function (i, v) { // 历史军事
+                    var title_author = v.title;
+                    var url = (App.getHost() + v.bCode);
+                    $('#lsjs').append('<li><a href="'+url+'">'+title_author+'</a></li>');
+                });
+            }
+        });
+    }
+</script>

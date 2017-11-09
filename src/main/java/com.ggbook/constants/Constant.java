@@ -10,6 +10,8 @@ public class Constant {
 	/**默认分页大小*/
 	public static final int PAGE_SIZE = 10;
 
+	public static final String URL_PREFIX = "http://localhost:8081/";
+
 	/**存储技术*/
 	public static class Storage {
 		/**后台登录人员session*/

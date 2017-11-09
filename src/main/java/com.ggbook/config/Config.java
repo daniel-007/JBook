@@ -68,12 +68,12 @@ public class Config extends JFinalConfig {
 			me.add(new QuartzPlugin("job.properties"));//任务调度插件
 			*/
 
-			try {
+			/*try {
 				//redis插件
 				RedisPlugin newsRedis = new RedisPlugin("REDIS", PropKit.get("redis.uri"), PropKit.getInt("redis.port"), 10000);
 				me.add(newsRedis);
 			} catch (Exception e) {
-			}
+			}*/
 
 			/*
 			try {
