@@ -151,10 +151,10 @@
         var params={};
         App.ajax({
             data: params,
-            resUrl: "/book/index",
+            resUrl: App.getHost()+"/book/index",
             callback: function (rb) {
                 if(!rb.status) return;
-                var data = rb.data;
+                var data = rb.body;
                 $.each(data.qt || [], function (i, v) { // 强推
                     var title_author = v.title+' ['+v.author.replace('作者：','')+']';
                     var url = (App.getHost() + v.bCode);
