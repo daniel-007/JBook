@@ -8,11 +8,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <title>搜索</title>
-    <link href="/page/book/assets/css/mobileDefault.css" rel="stylesheet" type="text/css">
-    <link href="/page/book/assets/css/mobileGameresult.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/mobileDefault.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/mobileGameresult.css" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="/page/book/assets/js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/page/book/assets/js/baidu-ajax.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./assets/js/baidu-ajax.js"></script>
 </head>
 <body>
 <div id="wrap" style="position: relative;">
@@ -21,7 +21,7 @@
         <div id="head_d">
                         <span class="s_back_wr">
                 <div onclick="backRefer();" class="head-a">
-                    <img src="/page/book/assets/images/back.png" width="12px" height="20px" border="0" class="s_back"
+                    <img src="./assets/images/back.png" width="12px" height="20px" border="0" class="s_back"
                          id="s_back_i">
                 </div>
             </span>
@@ -36,7 +36,7 @@
                 <span class="s_btn_wr">
                     <input name="s" value="1439609488155628121" type="hidden">
                     <input name="nsid" value="" type="hidden">
-                    <img src="/page/book/assets/images/fdj2.png" width="20px" height="20px" border="0" id="su"
+                    <img src="./assets/images/fdj2.png" width="20px" height="20px" border="0" id="su"
                          class="s_btn">
                 </span>
             </div>
@@ -75,15 +75,15 @@
         <li style="border-bottom:1px solid #F0F0F0;" data-index="<%=i%>"
             class="bdcs-search-sug-list-item <%= (i == selectedIndex) ? " bdcs-search-sug-list-item-current" : "" %>">
         <span class="fdj" style="display:block;vertical-align:middle;float:left;margin-top:3px;margin-right:8px;"> <img
-                src="/page/book/assets/images/fdj.gif" width="18px" height="18px" style="opacity:0.5;"
+                src="./assets/images/fdj.gif" width="18px" height="18px" style="opacity:0.5;"
                 border="0"></span> <span
                 class="bdcs-search-sug-list-item-value" style="display:block;float:left;"><%=data[i].title%></span>
         </li>
 
         <% } %>
     </script>
-    <script src="/page/book/assets/js/flyjsonp.js" type="text/javascript"></script>
-    <script src="/page/book/assets/js/sug-bdcs-result-mobile.js" type="text/javascript"></script>
+    <script src="./assets/js/flyjsonp.js" type="text/javascript"></script>
+    <script src="./assets/js/sug-bdcs-result-mobile.js" type="text/javascript"></script>
     <script type="text/javascript">
         function _getStyle(elem, name) {
             var inlineName = name;
@@ -140,8 +140,8 @@
                              ontouchend="this.className = 'game-legend-a result_content_end';"
                              ontouchmove="this.className = 'game-legend-a result_content_end';">
                             <div class="result-game-item-pic" style="width:80px;height:110px;">
-                                <img src="/page/book/assets/images/novel-noimg.jpg" alt="孺子&lt;em&gt;帝&lt;/em&gt;"
-                                     onerror="$(this).attr('src', '/page/book/assets/images/novel-noimg.jpg')"
+                                <img src="./assets/images/novel-noimg.jpg" alt="孺子&lt;em&gt;帝&lt;/em&gt;"
+                                     onerror="$(this).attr('src', './assets/images/novel-noimg.jpg')"
                                      style="border: 1px solid rgb(229,229,229);width:80px;height:110px;"
                                      class="result-game-item-pic-link-img">
                             </div>
@@ -193,7 +193,7 @@
             </div>
             <div class="result_bottom_2" id="bottom_logo2_div" style="width: 100%; display: none;" align="center">
                 <div class="s_bottom" align="center">
-                    <span id="result_bottom_2_left"> <img src="/page/book/assets/images/loading-front.png" width="23px"
+                    <span id="result_bottom_2_left"> <img src="./assets/images/loading-front.png" width="23px"
                                                           height="17px" border="0" id="bottom_logo"></span>
                     <span id="result_bottom_2_right">加载中...</span>
                 </div>
@@ -1048,18 +1048,18 @@
                         if (resultImage != undefined && resultImage != null && resultImage != "") {
                             if (tplId == 3) {
                                 addStr += '<div class="result-game-item-pic" style="width:90px;height:90px;">'
-                                    + '<img src="' + resultImage + '" onerror="$(this).attr(\'src\', \'/page/book/assets/images/game-noimg.jpg\')" alt="' + title
+                                    + '<img src="' + resultImage + '" onerror="$(this).attr(\'src\', \'./assets/images/game-noimg.jpg\')" alt="' + title
                                     + '" style="width:90px;height:90px;" class="result-game-item-pic-link-img"></div>';
                             } else {
                                 addStr += '<div class="result-game-item-pic" style="width:80px;height:110px;">'
-                                    + '<img src="' + resultImage + '" onerror="$(this).attr(\'src\', \'/page/book/assets/images/novel-noimg.jpg\')" alt="' + title
+                                    + '<img src="' + resultImage + '" onerror="$(this).attr(\'src\', \'./assets/images/novel-noimg.jpg\')" alt="' + title
                                     + '" style="border: 1px solid rgb(229,229,229);width:80px;height:110px;"" class="result-game-item-pic-link-img"></div>';
                             }
                         }
                         else {
                             if (tplId == 3) {
                                 addStr += '<div class="result-game-item-pic" style="width:90px;height:90px;">'
-                                    + '<img src="/page/book/assets/images/game-noimg.jpg" onerror="$(this).attr(\'src\', \'/page/book/assets/images/game-noimg.jpg\')" alt="' + title
+                                    + '<img src="./assets/images/game-noimg.jpg" onerror="$(this).attr(\'src\', \'./assets/images/game-noimg.jpg\')" alt="' + title
                                     + '" style="width:90px;height:90px;" class="result-game-item-pic-link-img"></div>';
                             }
                         }
@@ -1836,9 +1836,9 @@
                     }
                     var imgName = "cse.gif";
                     if (location.port) {
-                        img.src = location.protocol + "//" + location.hostname + ":" + location.port + "/page/book/assets/images/" + imgName + "?" + args + '&r=' + t;
+                        img.src = location.protocol + "//" + location.hostname + ":" + location.port + "./assets/images/" + imgName + "?" + args + '&r=' + t;
                     } else {
-                        img.src = location.protocol + "//" + location.hostname + "/page/book/assets/images/" + imgName + "?" + args + '&r=' + t;
+                        img.src = location.protocol + "//" + location.hostname + "./assets/images/" + imgName + "?" + args + '&r=' + t;
                     }
                 }
             </script>
